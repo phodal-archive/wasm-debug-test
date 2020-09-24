@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="./main.js"></script>
+    <script>
+        async function load() {
+            const response = await fetch("./onig.wasm");
+            // Using the response directly only works if the server sets the MIME type 'application/wasm'.
+            // Otherwise, a TypeError is thrown when using the streaming compiler.
+            // We therefore use the non-streaming compiler :(.
+            const bytes = await response.arrayBuffer();
+            await onig.loadWASM(bytes);
+
+            let onigScanner = new onig.OnigScanner(["^(?!\t)", "\G","^\t"]);
+            let result = onigScanner.findNextMatchSync("\t$(CC) -o $@ $^ $(CFLAGS)\n", 0);
+            console.log(result)
+        }
+
+        load();
+    </script>
 </head>
 <body>
 
