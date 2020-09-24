@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "mkdir out; emcc -o out/out.html ffi/hello.c -O3 -s WASM=1 -g --shell-file html_template/shell_minimal.html"
   },
   "author": "",
   "license": "ISC"
