@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "emcc -g -o index.html ffi/hello.c --source-map-base /",
-    "map": "emcc ffi/hello.c -o index.js "
+    "package": "emcc -g -o index.html ffi/hello.cc --source-map-base /",
+    "map": "emcc ffi/hello.cc -o index.js "
   },
   "author": "",
   "license": "ISC"
