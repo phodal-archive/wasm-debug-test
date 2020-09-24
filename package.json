@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "emcc -g -o index.html ffi/hello.cc --source-map-base /",
+    "package": "emcc -g -o index.html ffi/hello.cc",
     "emcc": "emcc ffi/hello.cc -o index.js"
   },
   "author": "",
