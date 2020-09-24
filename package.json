@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "mkdir out; emcc -o out/out.html ffi/hello.c -O3 -s WASM=1 -g --shell-file html_template/shell_minimal.html"
+    "package": "emcc -g -o index.html ffi/hello.c --source-map-base /",
+    "map": "emcc ffi/hello.c -o index.js "
   },
   "author": "",
   "license": "ISC"

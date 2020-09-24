@@ -1,2 +1,7 @@
 .idea
 out
+index.html
+index.js
+index.wasm
+index.wasm.map
+index.wat
