@@ -10,6 +10,15 @@ Documents: [Improved WebAssembly debugging in Chrome DevTools](https://developer
 brew install emsdk
 ```
 
+or 
+
+```
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install 1.39.12
+./emsdk activate 1.39.12
+```
+
 2. npm install
 
 ```
