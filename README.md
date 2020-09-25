@@ -37,7 +37,7 @@ yarn package
 # https://github.com/emscripten-core/emscripten/blob/master/src/settings.js
 
 emcc -O2 \
-    deps/oniguruma/src/.libs/libonig.so \
+    deps/oniguruma/src/.libs/libonig.a \
     src/onig.cc \
     -Isrc -Ideps/oniguruma/src \
     -o out/onig.js \
