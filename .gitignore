@@ -6,3 +6,4 @@ index.wasm
 index.wasm.map
 index.wat
 !onig/*
+node_modules

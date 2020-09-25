@@ -9,5 +9,8 @@
     "emcc": "emcc ffi/hello.cc -o index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "oniguruma": "^7.2.1"
+  }
 }
