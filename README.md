@@ -31,7 +31,19 @@ yarn install
 yarn package
 ```
 
-## VSCode BuildScript
+## Build VSCode Oniguruma
+
+### 1. Clone Code
+
+1. clone code from: [https://github.com/phodal-archive/vscode-oniguruma](https://github.com/phodal-archive/vscode-oniguruma)
+
+or just used [https://github.com/phodal-archive/vscode-oniguruma](https://github.com/phodal-archive/vscode-oniguruma)
+
+### 2. Build with Origin VSCode Oniguruma
+
+setup
+
+#### modify build.sh
 
 ```bash
 # https://github.com/emscripten-core/emscripten/blob/master/src/settings.js
@@ -53,7 +65,7 @@ emcc -O2 \
 node ./scripts/remove-print.js
 ```
 
-### Webpack Build Script
+#### modify Webpack
 
 ```javascript
 
@@ -75,6 +87,22 @@ module.exports = {
 };
 
 ```
+
+### 3. Follow Official README
+
+* Clone the repository.
+* Run `git submodule init`.
+* Run `git submodule update`.
+* Open the repository using the `Remote - Containers` extension, which will automatically create a docker container with the correct emscripten version and environment for building the WASM.
+* Run `npm install`.
+* Compile the oniguruma library with `npm run build-onig` (needed just once).
+* Compile the `.wasm` with `npm run build-wasm` (needed every time the `onig.cc` file is changed).
+* Compile the `.js` with `npm run build-tsc` or watch with `npm run watch-tsc` (needed every time the `.ts` files are changed).
+* Package for releasing as UMD with `npm run package`
+
+### 4. Copy Artifacts
+
+copy origin VSCode Oniguruma output to `onig` directory. 
 
 ## Logs
 
